@@ -9,11 +9,13 @@ export(bool) var generateMap = false setget generate
 
 export var side: int
 export var tileMaxMana: int
+var tileDict = {}
 
 
 func _ready():
 	generate(false)
 	generate(true)
+	GameManager.tileDict = tileDict
 	GameManager.tileDict[Vector2(0,0)].add_child(enemySpawnerResource.instance())
 	GameManager.tileDict[Vector2(side-1,0)].add_child(enemySpawnerResource.instance())
 	GameManager.tileDict[Vector2(0,side-1)].add_child(enemySpawnerResource.instance())
@@ -31,7 +33,7 @@ func generate(toggle):
 				currentTile.position = Vector2(45*j,45*i)
 				currentTile.mana = rn.randi_range(1,tileMaxMana)
 				currentTile.movementCost = rn.randi_range(1,3)
-				GameManager.tileDict[Vector2(i,j)] = currentTile
+				tileDict[Vector2(i,j)] = currentTile
 				currentTile.gridPosition = Vector2(i,j)
 				self.add_child(currentTile)
 		generateMap = true

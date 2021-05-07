@@ -20,7 +20,7 @@ font_data = ExtResource( 3 )
 
 [node name="Map" type="Node2D" parent="."]
 script = ExtResource( 2 )
-side = 15
+side = 10
 tileMaxMana = 5
 
 [node name="UI" type="Control" parent="."]
