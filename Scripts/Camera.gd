@@ -11,9 +11,3 @@ func _physics_process(delta):
 		self.position.x -= panSpeed * delta
 	if(Input.is_action_pressed("right")):
 		self.position.x += panSpeed * delta
-#	if(Input.is_action_pressed("zoom_in")):
-#		self.zoom.x + 1
-#		self.zoom.y + 1
-#	if(Input.is_action_pressed("zoom_in")):
-#		self.zoom.x - 1
-#		self.zoom.y - 1
